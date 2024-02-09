@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+  final String title;
+  const LoginScreen({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.blue,
-      child: const Center(
+      child: Center(
           child: Text(
-        'teste',
-        style: TextStyle(color: Colors.white),
+        title,
+        style: const TextStyle(color: Colors.white),
       )),
-      // child: const Colum1n(
-      //   mainAxisAlignment: MainAxisAlignment.center,
-      // ),
     );
   }
 }
