@@ -18,8 +18,11 @@ class MaterialAppClass extends StatelessWidget {
 }
 
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() {
+    // ignore: no_logic_in_create_state
     return HomePageState(title: 'Contador');
   }
 }
@@ -41,6 +44,7 @@ class HomePageState extends State<HomePage> {
           setState(() {
             counter++;
           });
+          // ignore: avoid_print
           print(counter);
         },
       )),
