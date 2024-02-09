@@ -16,3 +16,35 @@ class MaterialAppClass extends StatelessWidget {
     );
   }
 }
+
+class HomePage extends StatefulWidget {
+  @override
+  State<HomePage> createState() {
+    return HomePageState(title: 'Contador');
+  }
+}
+
+class HomePageState extends State<HomePage> {
+  final String title;
+  int counter = 0;
+
+  HomePageState({required this.title});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: Center(
+          child: GestureDetector(
+        child: Text('$title: $counter'),
+        onTap: () {
+          setState(() {
+            counter++;
+          });
+          print(counter);
+        },
+      )),
+    );
+    ;
+  }
+}
