@@ -35,20 +35,37 @@ class HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.red),
-      home: Center(
-          child: GestureDetector(
-        child: Text('$title: $counter'),
-        onTap: () {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: const Text(
+          'Home Page',
+          style: (TextStyle(color: Colors.white)),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
           setState(() {
             counter++;
           });
-          // ignore: avoid_print
-          print(counter);
         },
+        hoverColor: Colors.pink,
+        backgroundColor: Colors.red,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(50.0),
+        ),
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      ),
+      body: Center(
+          child: GestureDetector(
+        child: Text(
+          '$title: $counter',
+          style: const TextStyle(fontSize: 20),
+        ),
       )),
     );
-    ;
   }
 }
