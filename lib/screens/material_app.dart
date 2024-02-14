@@ -59,11 +59,16 @@ class HomePageState extends State<HomePage> {
             color: Colors.white,
           ),
         ),
-        body: Center(
-          child: GestureDetector(
-            child: Text(
-              '$title: $counter',
-              style: const TextStyle(fontSize: 20),
+        body: Container(
+          width: 200,
+          height: 200,
+          color: Colors.green,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              width: 100,
+              height: 100,
+              color: Colors.red,
             ),
           ),
         ));
